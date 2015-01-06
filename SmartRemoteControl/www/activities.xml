@@ -1,16 +1,65 @@
 <?xml version="1.0"?>
-<activities>
-	<!-- Configure each activity below.  Create an activity node with name
-	     which will be displayed on the activity button.  Add a codes node
-	     which includes a code element for each remote control code to
-	     send in order. -->
-	<activity>
-		<name>Movies</name>
-		<codes>
-			<!-- Sony TV power code -->
-			<code>SONY: C A90</code>
-			<!-- Panasonic blu-ray player power code -->
-			<code>PANASONIC: 4004 D00BCB1</code>
-		</codes>
-	</activity>
-</activities>
+<remotes>
+	<remote>
+		<name>blu-ray</name>
+		<led>13</led>
+		<activities>
+			<activity>
+				<command>power</command>
+				<code>RC6: 14 146C7</code>
+			</activity>
+      <activity>
+      	<command>pause</command>
+      	<code>RC6: 14 14630</code>
+      </activity>
+			<activity>
+      	<command>previous</command>
+      	<code>RC6: 14 14621</code>
+      </activity>
+      <activity>
+      	<command>next</command>
+      	<code>RC6: 14 14620</code>
+      </activity>
+      <activity>
+      	<command>stop</command>
+      	<code>RC6: 14 14631</code>
+      </activity>
+      <activity>
+      	<command>ffw</command>
+      	<code>RC6: 14 14628</code>
+      </activity>
+      <activity>
+      	<command>fbw</command>
+      	<code>RC6: 14 14629</code>
+      </activity>
+      <activity>
+      	<command>subtitle</command>
+      	<code>RC6: 14 1464B</code>
+      </activity>
+      <activity>
+      	<command>up</command>
+      	<code>RC6: 14 14658</code>
+      </activity>
+      <activity>
+      	<command>down</command>
+      	<code>RC6: 14 14659</code>
+      </activity>
+      <activity>
+      	<command>left</command>
+      	<code>RC6: 14 1465A</code>
+      </activity>
+      <activity>
+      	<command>right</command>
+      	<code>RC6: 14 1465B</code>
+      </activity>
+      <activity>
+      	<command>menu</command>
+      	<code>RC6: 14 1469C</code>
+      </activity>
+      <activity>
+      	<command>power</command>
+      	<code>RC6: 14 146C7</code>
+      </activity>
+		</activities>
+	</remote>
+</remotes>

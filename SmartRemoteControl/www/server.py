@@ -20,18 +20,41 @@ activities = config.get_activities()
 def root():
 	return render_template('index.html', activities=activities)
 
-@app.route('/activity/<int:index>', methods=['POST'])
-def activity(index):
-	# Connect to the console socket.
-	console = socket.create_connection(('localhost', CONSOLE_PORT))
-	# Send all the codes in order that are associated with the activity.
-	for code in activities[index].get('codes', []):
+@app.route('/<string:name>/<string:command>', methods=['POST'])
+def send_command(name, command):
+	code = None
+
+	for item in activities:
+
+		if item['command'] == name + '-' + command:
+			code = item['code']
+			break
+
+	if code is None:
+		print 'code is None'
+		abort(404)
+	else:
+		print 'code: ' + code
+		console = socket.create_connection(('localhost', CONSOLE_PORT))
 		console.sendall(code + '\n')
-		# Wait ~500 milliseconds between codes.
 		time.sleep(0.5)
-	console.shutdown(socket.SHUT_RDWR)
-	console.close()
+		console.shutdown(socket.SHUT_RDWR)
+		console.close()
 	return 'OK'
+
+
+# @app.route('/activity/<int:index>', methods=['POST'])
+# def activity(index):
+# 	# Connect to the console socket.
+# 	console = socket.create_connection(('localhost', CONSOLE_PORT))
+# 	# Send all the codes in order that are associated with the activity.
+# 	for code in activities[index].get('codes', []):
+# 		console.sendall(code + '\n')
+# 		# Wait ~500 milliseconds between codes.
+# 		time.sleep(0.5)
+# 	console.shutdown(socket.SHUT_RDWR)
+# 	console.close()
+# 	return 'OK'
 
 
 if __name__ == '__main__':
