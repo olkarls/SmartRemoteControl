@@ -19,7 +19,7 @@ def get_activities():
       command = activity.find('command').text
       code = activity.find('code').text
 
-      config.append({ 'command': name + '-' + command,
+      config.append({ 'command': name + '/' + command,
                       'led': led,
                       'code': code })
   return config

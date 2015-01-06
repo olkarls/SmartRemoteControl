@@ -26,7 +26,7 @@ def send_command(name, command):
 
 	for item in activities:
 
-		if item['command'] == name + '-' + command:
+		if item['command'] == name + '/' + command:
 			code = item['code']
 			break
 

@@ -26,7 +26,7 @@
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]--> 
+        <![endif]-->
       <div class="container">
         <div class="jumbotron">
           <h1>Smart Remote Control</h1>
@@ -44,7 +44,7 @@
         <div class="row">
           {% for activity in activities %}
           <div class="col-sm-2">
-            <button type="button" class="btn btn-default btn-block btn-lg" onclick="sendActivity({{ loop.index - 1 }});">{{ activity.name }}</button>
+            <button type="button" data-command="{{activity.command}}" onclick="sendCommand" class="btn btn-default btn-block btn-lg">{{ activity.command }}</button>
           </div>
           {% endfor %}
         </div>
@@ -58,41 +58,17 @@
       {% endfor %}
       ];
 
-      function sendActivity(index) {
+      var sendCommand = function() {
+        var command = $(event.target).attr('data-command');
+
         $.ajax({
-          url: '/activity/' + index,
+          url: command,
           method: 'POST'
         });
       }
 
-      function speak() {
-        $('#speech-status').text('Speak activity name...');
-        // Run speech recognition. 
-        var recognition = new webkitSpeechRecognition();
-        recognition.onresult = function(event) {
-          // When a result is available, first grab the transcript.
-          var result = '';
-          for (var i = event.resultIndex; i < event.results.length; ++i) {
-            result += event.results[i][0].transcript;
-          }
-          // Check if transcript matches an activity name.
-          for (var i = 0; i < activityList.length; ++i) {
-            var item = activityList[i];
-            if (item.name.toLowerCase() == result.toLowerCase()) {
-              // Found a match!
-              $('#speech-status').text('Running activity: ' + item.name);
-              sendActivity(item.index);
-              return;
-            }
-          }
-          // Couldn't find a match, so display what was heard.
-          $('#speech-status').text('Heard: ' + result);
-        }
-        recognition.onerror = function(event) {
-          $('#speech-status').text('Error recognizing speech!');
-        }
-        recognition.start();
-      }
+      $("button").click(sendCommand);
+
       </script>
     </body>
 </html>
