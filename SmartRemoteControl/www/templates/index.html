@@ -35,7 +35,7 @@
           {% for remote in remotes['remotes'] %}
             {% for command in remote['commands'] %}
               <div class="col-sm-2">
-                <button type="button" data-command="{{remote.name}}/{{command.name}}" onclick="sendCommand" class="btn btn-default btn-block btn-lg">{{remote.name}}/{{command.name}}</button>
+                <button type="button" data-command="{{remote.name}}/{{command.name}}" class="btn btn-default btn-block btn-lg">{{remote.name}}/{{command.name}}</button>
               </div>
             {% endfor %}
           {% endfor %}

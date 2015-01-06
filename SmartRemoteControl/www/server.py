@@ -41,21 +41,6 @@ def send_command(name, command):
 		console.close()
 	return 'OK'
 
-
-# @app.route('/activity/<int:index>', methods=['POST'])
-# def activity(index):
-# 	# Connect to the console socket.
-# 	console = socket.create_connection(('localhost', CONSOLE_PORT))
-# 	# Send all the codes in order that are associated with the activity.
-# 	for code in activities[index].get('codes', []):
-# 		console.sendall(code + '\n')
-# 		# Wait ~500 milliseconds between codes.
-# 		time.sleep(0.5)
-# 	console.shutdown(socket.SHUT_RDWR)
-# 	console.close()
-# 	return 'OK'
-
-
 if __name__ == '__main__':
 	# Create a server listening for external connections on the default
 	# port 5000.  Enable debug mode for better error messages and live
