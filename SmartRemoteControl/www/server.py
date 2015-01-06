@@ -13,22 +13,21 @@ CONSOLE_PORT = 6571
 app = Flask(__name__)
 
 # Get activity configuration.
-activities = config.get_activities()
-
+remotes = config.get_commands()
 
 @app.route('/')
 def root():
-	return render_template('index.html', activities=activities)
+	return render_template('index.html', remotes=remotes)
 
 @app.route('/<string:name>/<string:command>', methods=['POST'])
 def send_command(name, command):
 	code = None
 
-	for item in activities:
-
-		if item['command'] == name + '/' + command:
-			code = item['code']
-			break
+	for remote in remotes['remotes']:
+		if remote['name'] == name:
+			for comm in remote['commands']:
+				if comm['name'] == command:
+					code = comm['code']
 
 	if code is None:
 		print 'code is None'

@@ -1,61 +1,66 @@
 {
-  "name": "blu-ray",
-  "commands": [
+  "remotes": [
     {
-      "name": "play",
-      "code": "RC6: 14 1462C"
-    },
-    {
-      "name": "pause",
-      "code": "RC6: 14 14630"
-    },
-    {
-      "name": "previous",
-      "code": "RC6: 14 14621"
-    },
-    {
-      "name": "next",
-      "code": "RC6: 14 14620"
-    },
-    {
-      "name": "stop",
-      "code": "RC6: 14 14631"
-    },
-    {
-      "name": "ffw",
-      "code": "RC6: 14 14628"
-    },
-    {
-      "name": "fbw",
-      "code": "RC6: 14 14629"
-    },
-    {
-      "name": "subtitle",
-      "code": "RC6: 14 1464B"
-    },
-    {
-      "name": "up",
-      "code": "RC6: 14 14658"
-    },
-    {
-      "name": "down",
-      "code": "RC6: 14 14659"
-    },
-    {
-      "name": "left",
-      "code": "RC6: 14 1465A"
-    },
-    {
-      "name": "right",
-      "code": "RC6: 14 1465B"
-    },
-    {
-      "name": "menu",
-      "code": "RC6: 14 1469C"
-    },
-    {
-      "name": "power",
-      "code": "RC6: 14 146C7"
+      "name": "blu-ray",
+      "led": 13,
+      "commands": [
+        {
+          "name": "play",
+          "code": "RC6: 14 1462C"
+        },
+        {
+          "name": "pause",
+          "code": "RC6: 14 14630"
+        },
+        {
+          "name": "previous",
+          "code": "RC6: 14 14621"
+        },
+        {
+          "name": "next",
+          "code": "RC6: 14 14620"
+        },
+        {
+          "name": "stop",
+          "code": "RC6: 14 14631"
+        },
+        {
+          "name": "ffw",
+          "code": "RC6: 14 14628"
+        },
+        {
+          "name": "fbw",
+          "code": "RC6: 14 14629"
+        },
+        {
+          "name": "subtitle",
+          "code": "RC6: 14 1464B"
+        },
+        {
+          "name": "up",
+          "code": "RC6: 14 14658"
+        },
+        {
+          "name": "down",
+          "code": "RC6: 14 14659"
+        },
+        {
+          "name": "left",
+          "code": "RC6: 14 1465A"
+        },
+        {
+          "name": "right",
+          "code": "RC6: 14 1465B"
+        },
+        {
+          "name": "menu",
+          "code": "RC6: 14 1469C"
+        },
+        {
+          "name": "power",
+          "code": "RC6: 14 146C7"
+        }
+      ]
     }
   ]
 }
