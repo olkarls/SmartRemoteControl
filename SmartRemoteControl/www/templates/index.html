@@ -29,7 +29,7 @@
         <![endif]-->
       <div class="container">
         <div class="jumbotron">
-          <h1>Smart Remote Control</h1>
+          <h1>Cloud Control</h1>
         </div>
         <div class="row">
           {% for remote in remotes['remotes'] %}
@@ -44,17 +44,16 @@
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
       <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
       <script>
+        var sendCommand = function() {
+          var command = $(event.target).attr('data-command');
 
-      var sendCommand = function() {
-        var command = $(event.target).attr('data-command');
+          $.ajax({
+            url: command,
+            method: 'POST'
+          });
+        }
 
-        $.ajax({
-          url: command,
-          method: 'POST'
-        });
-      }
-
-      $("button").click(sendCommand);
+        $("button").click(sendCommand);
 
       </script>
     </body>

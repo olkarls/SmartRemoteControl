@@ -1,66 +1,123 @@
 {
-  "remotes": [
-    {
-      "name": "blu-ray",
-      "led": 13,
-      "commands": [
+    "remotes": [
         {
-          "name": "play",
-          "code": "RC6: 14 1462C"
+            "name": "blu-ray",
+            "commands": [
+                {
+                    "name": "play",
+                    "code": "RC6: 14 462C"
+                },
+                {
+                    "name": "pause",
+                    "code": "RC6: 14 4630"
+                },
+                {
+                    "name": "previous",
+                    "code": "RC6: 14 4621"
+                },
+                {
+                    "name": "next",
+                    "code": "RC6: 14 4620"
+                },
+                {
+                    "name": "stop",
+                    "code": "RC6: 14 4631"
+                },
+                {
+                    "name": "ffw",
+                    "code": "RC6: 14 4628"
+                },
+                {
+                    "name": "fbw",
+                    "code": "RC6: 14 4629"
+                },
+                {
+                    "name": "subtitle",
+                    "code": "RC6: 14 464B"
+                },
+                {
+                    "name": "up",
+                    "code": "RC6: 14 4658"
+                },
+                {
+                    "name": "down",
+                    "code": "RC6: 14 4659"
+                },
+                {
+                    "name": "left",
+                    "code": "RC6: 14 465A"
+                },
+                {
+                    "name": "right",
+                    "code": "RC6: 14 465B"
+                },
+                {
+                    "name": "menu",
+                    "code": "RC6: 14 469C"
+                },
+                {
+                    "name": "power",
+                    "code": "RC6: 14 46C7"
+                }
+            ]
         },
         {
-          "name": "pause",
-          "code": "RC6: 14 14630"
+            "name": "surround system",
+            "commands": [
+                {
+                    "name": "power",
+                    "code": "NEC: 20 10EF08F7"
+                },
+                {
+                    "name": "vol-up",
+                    "code": "NEC: 20 10EF58A7"
+                },
+                {
+                    "name": "vol-down",
+                    "code": "NEC: 20 10EF708F"
+                },
+                {
+                    "name": "input",
+                    "code": "NEC: 20 10EF906F"
+                },
+                {
+                    "name": "mute",
+                    "code": "NEC: 20 10EF6897"
+                },
+                {
+                    "name": "effect",
+                    "code": "NEC: 20 10EFB847"
+                }
+            ]
         },
         {
-          "name": "previous",
-          "code": "RC6: 14 14621"
-        },
-        {
-          "name": "next",
-          "code": "RC6: 14 14620"
-        },
-        {
-          "name": "stop",
-          "code": "RC6: 14 14631"
-        },
-        {
-          "name": "ffw",
-          "code": "RC6: 14 14628"
-        },
-        {
-          "name": "fbw",
-          "code": "RC6: 14 14629"
-        },
-        {
-          "name": "subtitle",
-          "code": "RC6: 14 1464B"
-        },
-        {
-          "name": "up",
-          "code": "RC6: 14 14658"
-        },
-        {
-          "name": "down",
-          "code": "RC6: 14 14659"
-        },
-        {
-          "name": "left",
-          "code": "RC6: 14 1465A"
-        },
-        {
-          "name": "right",
-          "code": "RC6: 14 1465B"
-        },
-        {
-          "name": "menu",
-          "code": "RC6: 14 1469C"
-        },
-        {
-          "name": "power",
-          "code": "RC6: 14 146C7"
+            "name": "TV-box",
+            "commands": [
+                {
+                    "name": "power",
+                    "code": "NEC: 20 FD9A65"
+                },
+                {
+                    "name": "channel-up",
+                    "code": "NEC: 20 FD609F"
+                },
+                {
+                    "name": "channel-down",
+                    "code": "NEC: 20 FD6897"
+                },
+                {
+                    "name": "vol-up",
+                    "code": "NEC: 20 10EF58A7"
+                },
+                {
+                    "name": "vol-down",
+                    "code": "NEC: 20 FDD827"
+                },
+                {
+                    "name": "mute",
+                    "code": "NEC: 20 FD9867"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
